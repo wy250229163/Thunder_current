@@ -27,10 +27,5 @@ int main(void)
   while(1)
 	{
 		CHEAK_ISnewdisplay();
-//		tttt=GET_INchip_MAXdata(15);
-//		LCDwrite_char(3,0,0x30+(u8)(tttt/1000));
-//		LCDwrite_char(4,0,0x30+(u8)(tttt%1000/100));
-//  	LCDwrite_char(5,0,0x30+(u8)(tttt%100/10));
-//		LCDwrite_char(6,0,0x30+(u8)(tttt%10));
 	}
 }
