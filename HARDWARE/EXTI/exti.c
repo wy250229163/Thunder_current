@@ -13,8 +13,8 @@ void EXTI_GETDATA_Init(void)
 	GPIOB->CRL|=0X00000088; 	
 	GPIOB->ODR|=3<<0; //PB0/1上拉
 	
-	Ex_NVIC_Config(GPIO_B,0,RTIR);
-	Ex_NVIC_Config(GPIO_B,1,RTIR);
+	Ex_NVIC_Config(GPIO_B,0,FTIR);
+	Ex_NVIC_Config(GPIO_B,1,FTIR);
 	
 	MY_NVIC_Init(2,1,EXTI0_IRQn,2);	//抢占0，子优先级0，组2
 	MY_NVIC_Init(2,0,EXTI1_IRQn,2);	//抢占0，子优先级1，组2

@@ -96,7 +96,7 @@ void EXTI0_IRQHandler(void)
 		DATA_Buffer[k]=Get_Adc_Average(ADC_CH1,SAMPLE_count);	
 	}
 	DATASAVE_inCHIP(0);
-	delay_ms(500);
+	delay_ms(700);
 	EXTI->PR=1<<0;
 } 
 
@@ -108,7 +108,7 @@ void EXTI1_IRQHandler(void)
 		DATA_Buffer[k]=Get_Adc_Average(ADC_CH2,SAMPLE_count);	
 	}
 	DATASAVE_inCHIP(1);
-	delay_ms(500);
+	delay_ms(700);
 	EXTI->PR=1<<1;
 }
 
