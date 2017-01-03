@@ -5,6 +5,7 @@
 #include "flash.h"
 #include "DS1302.h"
 #include "adc.h"
+#include "exti.h"
 
 //定义采集点的个数
 #define SAMPLES_NUM 1
@@ -91,12 +92,15 @@ void DATASAVE_inCHIP(int exti)
 void EXTI0_IRQHandler(void)
 {
 	u8 k;
+	SIG_RST=0;
 	for(k=0;k<SAMPLES_NUM;k++)
 	{
 		DATA_Buffer[k]=Get_Adc_Average(ADC_CH1,SAMPLE_count);	
 	}
 	DATASAVE_inCHIP(0);
+	SIG_RST=1;
 	delay_ms(700);
+	SIG_RST=0;
 	EXTI->PR=1<<0;
 } 
 
